@@ -1,0 +1,4 @@
+testcase|order_id|status|reason|message
+Positive_Cancel_Buy_Limit|622267258|200||
+Positive_Cancel_Sell_Limit|622267545|200||
+Negative_Cancel_Invalid_Order|o|400|MissingOrderField|Missing or invalid order_id

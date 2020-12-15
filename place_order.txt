@@ -1,0 +1,21 @@
+testcase|symbol|amount|price|stop_price|side|type|status|reason|message
+Positive_Buy_Limit|btcusd|5|3633.00||buy|exchange limit|200||
+Positive_Sell_Limit|btcusd|2|3633.00||sell|exchange limit|200||
+Positive_Buy_Stop_Limit|ethusd|5|236.50|235.10|buy|exchange stop limit|200||
+Positive_Sell_Stop_Limit|zecusd|5|57.10|58.00|sell|exchange stop limit|200||
+Positive_Amount_In_Decimal|btcusd|1.2|3633.00||buy|exchange limit|200||
+Negative_Amount_Empty|btcusd||3633.00||buy|exchange limit|400|InvalidQuantity|Invalid quantity for symbol BTCUSD:
+Negative_Amount_Zero|btcusd|0|3633.00||buy|exchange limit|400|InvalidQuantity|Invalid quantity for symbol BTCUSD: 0
+Negative_Amount_Less_Than_Zero|btcusd|-5|3633.00||buy|exchange limit|400|InvalidQuantity|Invalid quantity for symbol BTCUSD: -5
+Negative_Price_Empty|btcusd|5|||buy|exchange limit|400|InvalidPrice|Invalid price for symbol BTCUSD:
+Negative_Price_Zero|btcusd|5|0||buy|exchange limit|400|InvalidPrice|Invalid price for symbol BTCUSD: 0
+Negative_Price_Less_Than_Zero|btcusd|5|-1.2||buy|exchange limit|400|InvalidPrice|Invalid price for symbol BTCUSD: -1.2
+Negative_Stop_Price_Empty|btcusd|5|3633.00||buy|exchange stop limit|400|InvalidStopPrice|Invalid stop price for symbol BTCUSD:
+Negative_Stop_Price_Zero|btcusd|5|0.03|0|sell|exchange stop limit|400|InvalidStopPrice|Invalid stop price for symbol BTCUSD: 0
+Negative_Stop_Price_Less_Than_Zero|btcusd|5|3633.00|-1.2|sell|exchange stop limit|400|InvalidStopPrice|Invalid stop price for symbol BTCUSD: -1.2
+Negative_Buy_Stop_Limit_Stop_Greater_Than_Limit|btcusd|5|3633.00|3634.00|buy|exchange stop limit|400|InvalidStopPriceBuy|Stop Price: $3,634.00 must be lower than Price: $3,633.00 for Stop Limit buy Orders
+Negative_Sell_Stop_Limit_Stop_Less_Than_Limit|btcusd|5|3633.00|3632.00|sell|exchange stop limit|400|InvalidStopPriceSell|Stop Price: $3,632.00 must be greater than Price: $3,633.00 for Stop Limit sell Orders
+Negative_Symbol_Empty||5|3633.00||buy|exchange limit|400|InvalidSymbol|Received unsupported symbol ''
+Negative_Symbol_Invalid|XX|5|3633.00||buy|exchange limit|400|InvalidSymbol|Received unsupported symbol 'XX'
+Negative_Type_Empty|btcusd|5|0||buy||400|InvalidOrderType|Invalid order type for symbol BTCUSD: ''
+Negative_Type_Invalid|btcusd|5|0||buy|limit|400|InvalidOrderType|Invalid order type for symbol BTCUSD: 'limit'
